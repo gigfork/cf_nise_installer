@@ -21,10 +21,19 @@ if [ ! -d ~/.rbenv ]; then
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 fi
 . ~/.bash_profile
+echo $PATH
+
 if ! (rbenv versions | grep -q 1.9.3-p392); then
     rbenv install 1.9.3-p392
 fi
 rbenv local 1.9.3-p392
+
+echo $GEM_HOME
+echo $PATH
+which ruby
+which gem
+
+export
 
 # BOSH CLI and CF commands
 gem install bundler --no-rdoc --no-ri
